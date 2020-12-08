@@ -46,4 +46,9 @@ public class ProfilesService implements IProfilesService{
     public Profile getByDevId(long id) {
         return profilesRepository.getByDevId(id);
     }
+
+    @Override
+    public Profile addProfile(Profile profile) {
+        return profilesRepository.save(profile);
+    }
 }
