@@ -13,4 +13,5 @@ public interface IProfilesService {
     Profile getById(long id);
     Profile getByDevId(long id);
     Profile addProfile(Profile profile);
+    Profile updateProfile(Profile profile);
 }

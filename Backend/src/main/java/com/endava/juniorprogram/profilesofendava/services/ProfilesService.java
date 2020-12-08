@@ -51,4 +51,9 @@ public class ProfilesService implements IProfilesService{
     public Profile addProfile(Profile profile) {
         return profilesRepository.save(profile);
     }
+
+    @Override
+    public Profile updateProfile(Profile profile) {
+        return profilesRepository.save(profile);
+    }
 }
