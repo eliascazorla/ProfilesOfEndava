@@ -40,4 +40,9 @@ public class ProfileController {
 
     @GetMapping("/developer/{id}")
     public Profile getProfileByDev(@PathVariable("id") long idDev){return profilesService.getByDevId(idDev);}
+
+    @PostMapping
+    public Profile createProfile(@RequestBody Profile profile){
+        return profilesService.addProfile(profile);
+    }
 }
