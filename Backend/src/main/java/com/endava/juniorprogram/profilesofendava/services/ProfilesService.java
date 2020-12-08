@@ -36,4 +36,9 @@ public class ProfilesService implements IProfilesService{
     public List<Profile> getAll() {
         return (List<Profile>) profilesRepository.findAll();
     }
+
+    @Override
+    public Profile getById(long id) {
+        return profilesRepository.findById(id).get();
+    }
 }

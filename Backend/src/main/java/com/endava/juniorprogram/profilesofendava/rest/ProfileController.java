@@ -3,10 +3,7 @@ package com.endava.juniorprogram.profilesofendava.rest;
 import com.endava.juniorprogram.profilesofendava.model.Profile;
 import com.endava.juniorprogram.profilesofendava.services.IProfilesService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -34,5 +31,10 @@ public class ProfileController {
             return profilesService.getBySkill(skill);
         }
         return profilesService.getAll();
+    }
+
+    @GetMapping("{id}")
+    public Profile getProfileById(@PathVariable("id") long id) {
+        return profilesService.getById(id);
     }
 }

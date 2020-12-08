@@ -10,4 +10,5 @@ public interface IProfilesService {
     List<Profile> getBySeniority(String seniority);
     List<Profile> getBySkill(String skill);
     List<Profile> getAll();
+    Profile getById(long id);
 }
