@@ -11,4 +11,5 @@ public interface IProfilesService {
     List<Profile> getBySkill(String skill);
     List<Profile> getAll();
     Profile getById(long id);
+    Profile getByDevId(long id);
 }

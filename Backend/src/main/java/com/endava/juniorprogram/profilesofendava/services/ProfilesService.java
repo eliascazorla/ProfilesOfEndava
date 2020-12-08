@@ -41,4 +41,9 @@ public class ProfilesService implements IProfilesService{
     public Profile getById(long id) {
         return profilesRepository.findById(id).get();
     }
+
+    @Override
+    public Profile getByDevId(long id) {
+        return profilesRepository.getByDevId(id);
+    }
 }

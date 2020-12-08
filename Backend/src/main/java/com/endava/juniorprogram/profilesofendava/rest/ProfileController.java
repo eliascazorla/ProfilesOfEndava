@@ -37,4 +37,7 @@ public class ProfileController {
     public Profile getProfileById(@PathVariable("id") long id) {
         return profilesService.getById(id);
     }
+
+    @GetMapping("/developer/{id}")
+    public Profile getProfileByDev(@PathVariable("id") long idDev){return profilesService.getByDevId(idDev);}
 }
