@@ -1,18 +1,10 @@
 import * as React from 'react';
+import { Profile } from '../interfaces/Profile';
 import PhotoAndInfo from './PhotoAndInfo';
 import Skills from './Skills';
 
 interface CardProps {
     profile: Profile
-}
-
-interface Profile {
-    id:number,
-    fullName:string,
-    bornDate:string,
-    tenure:number,
-    seniority:string
-    skills:string[]
 }
 
 function Card (props: CardProps) {
