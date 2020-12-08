@@ -12,4 +12,5 @@ public interface ProfilesRepository extends CrudRepository<Profile, Long> {
     List<Profile> getByTenure(long tenure);
     List<Profile> getBySeniority(String seniority);
     List<Profile> findBySkills_Skill_Name(String name);
+    Profile getByDevId(long id);
 }
