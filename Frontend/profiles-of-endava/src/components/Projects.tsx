@@ -7,7 +7,8 @@ interface ProjectsProps {
 
 function Projects (props: ProjectsProps) {
   return (
-    <div>
+    <div className="projects">
+      <h3>Projects</h3>
       <ul>
         {props.projects.map(project => <li>{project.description}</li>)}
       </ul>
