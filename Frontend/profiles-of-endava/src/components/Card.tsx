@@ -11,10 +11,8 @@ interface CardProps {
 function Card (props: CardProps) {
   return (
     <div className="card">
-      <PhotoAndInfo fullName={props.profile.fullName} tenure={props.profile.tenure} seniority={props.profile.seniority} />
-      <h3>Skills</h3>
+      <PhotoAndInfo fullName={props.profile.fullName} tenure={props.profile.tenure} seniority={props.profile.seniority}/>
       <Skills skills={props.profile.skills} />
-      <h3>Projects</h3>
       <Projects projects={props.profile.projects}/>
     </div>
   );
