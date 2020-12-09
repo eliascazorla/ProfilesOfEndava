@@ -1,8 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.scss';
+import './styles/App.scss';
 import CardsContainer from './components/CardsContainer';
 import { Profile } from './interfaces/Profile';
+import Header from './components/Header';
 
 
 
@@ -28,6 +29,7 @@ function App() {
                                 }];
   return (
     <div className="App">
+      <Header fullName={profiles[0].fullName}/>
       <CardsContainer profiles={profiles}/>
     </div>
   );
