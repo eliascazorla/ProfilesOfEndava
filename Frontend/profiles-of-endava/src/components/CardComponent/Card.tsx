@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { Profile } from '../interfaces/Profile';
-import PhotoAndInfo from './PhotoAndInfo';
-import Projects from './Projects';
-import Skills from './Skills';
+import { Profile } from '../../interfaces/Profile';
+import PhotoAndInfo from '../PhotoAndInfoComponent/PhotoAndInfo';
+import Projects from '../ProjectsComponent/Projects';
+import Skills from '../SkillsComponent/Skills';
+import "../CardComponent/Card.scss"
 
 interface CardProps {
     profile: Profile

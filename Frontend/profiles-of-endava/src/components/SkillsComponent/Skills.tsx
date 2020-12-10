@@ -1,4 +1,5 @@
 import * as React from 'react';
+import "../SkillsComponent/Skills.scss"
 
 interface SkillsProps {
     skills:string[]

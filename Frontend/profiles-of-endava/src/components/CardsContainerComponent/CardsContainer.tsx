@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Profile } from '../interfaces/Profile';
-import Card from './Card';
+import { Profile } from '../../interfaces/Profile';
+import Card from '../CardComponent/Card';
 
 
 
