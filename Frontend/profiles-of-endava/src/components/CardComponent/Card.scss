@@ -1,0 +1,22 @@
+*{
+    padding:0;
+    margin:0;
+}
+
+$color-white:#FFF;
+$color-blue:#08619D;
+
+.card{
+    width:379px;
+    height:381px;
+    border:1px solid grey;
+    padding:22px;
+    box-sizing:border-box;
+    display:grid;
+    grid-template:repeat(3, 1fr)/repeat(3,1fr);
+    background-color:$color-white;
+}
+
+h3{
+    color:$color-blue;
+  }

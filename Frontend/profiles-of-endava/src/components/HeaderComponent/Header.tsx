@@ -1,7 +1,8 @@
 import * as React from 'react';
+import "../HeaderComponent/Header.scss"
 
 interface HeaderProps {
-    fullName:string
+    fullName?:string
 }
 
 function Header (props: HeaderProps) {

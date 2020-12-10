@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Project } from '../interfaces/Project';
+import { Project } from '../../interfaces/Project';
+import "../ProjectsComponent/Projects.scss"
 
 interface ProjectsProps {
     projects:Project[]
