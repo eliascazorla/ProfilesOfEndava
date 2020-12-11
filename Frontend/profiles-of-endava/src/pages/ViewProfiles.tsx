@@ -13,7 +13,6 @@ function ViewProfiles () {
         const profileService: ProfileService = new ProfileService();
         profileService.get().then(response => {
             setProfiles(response);
-            //usar hook cuando se reinicia la pagina y ahi setearle el estado con los perfiles, madarle ese estado a cardscontainer.
         });
     });
     

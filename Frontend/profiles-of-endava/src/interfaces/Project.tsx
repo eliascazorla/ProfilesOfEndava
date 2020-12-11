@@ -1,7 +1,7 @@
 export interface Project{
     id:number,
-    startDate:string,
-    endDate:string,
+    startDate:Date,
+    endDate:Date,
     company:string,
     description:string
 }
