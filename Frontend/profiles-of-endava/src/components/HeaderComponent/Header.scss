@@ -4,11 +4,13 @@
 }
   
 
-$color-dark-grey:#666;
+//$color-dark-grey:#666;
+$color-dark-grey:rgb(72,85,93);
 $color-white:#FFF;
 
 
 .header{
+    height: 45px;
     background-color: $color-dark-grey;
     color: $color-white;
   }

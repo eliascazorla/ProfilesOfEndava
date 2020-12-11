@@ -7,7 +7,7 @@ import ProfileService from '../services/ProfileService';
 
 function ViewProfiles () {
 
-    const [profiles, setProfiles] = useState(new Array());
+    const [profiles, setProfiles] = useState([]);
 
     useEffect(() => {
         const profileService: ProfileService = new ProfileService();
