@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Profile } from '../../interfaces/Profile';
 import Card from '../CardComponent/Card';
+import "../CardsContainerComponent/CardsContainer.scss"
 
 
 interface CardsContainerProps {
