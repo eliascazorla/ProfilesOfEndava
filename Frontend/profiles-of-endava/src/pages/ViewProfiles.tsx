@@ -4,6 +4,9 @@ import { Profile } from '../interfaces/Profile';
 
 
 function ViewProfiles () {
+    /*const example = (text:string) => {
+        console.log(text);
+    }*/
     const profiles: Profile[] = [{id: 1, 
         fullName:"Elias Cazorla",
         bornDate:"1999-08-14", 
@@ -25,7 +28,7 @@ function ViewProfiles () {
          }];
     return (
         <div>
-            <CardsContainer profiles={profiles}/>
+            <CardsContainer profiles={profiles} /*test={example}*//>
         </div>
     );
 }
