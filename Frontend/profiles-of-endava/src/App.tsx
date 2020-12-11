@@ -1,17 +1,15 @@
 import React from 'react';
 import logo from './logo.svg';
 import './styles/App.scss';
-import Header from './components/HeaderComponent/Header';
 import ViewProfiles from './pages/ViewProfiles';
-import SearchBox from './components/SearchBoxComponent/SearchBox';
-
+import SharedLayout from './layouts/SharedLayout';
 
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <SearchBox/>
-      <ViewProfiles/>
+      <SharedLayout>
+          <ViewProfiles/>
+      </SharedLayout>
     </div>
   );
 }
