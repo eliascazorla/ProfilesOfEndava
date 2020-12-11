@@ -1,8 +1,9 @@
 import * as React from 'react';
+import { SkillLevel } from '../../interfaces/SkillLevel';
 import "../SkillsComponent/Skills.scss"
 
 interface SkillsProps {
-    skills:string[]
+    skills:SkillLevel[]
 }
 
 function Skills (props: SkillsProps) {
@@ -10,19 +11,14 @@ function Skills (props: SkillsProps) {
     <div className="skills">
       <h3>Skills</h3>
       <ul>
-            <li>{props.skills[0]}</li>
-            <li>{props.skills[1]}</li>
-            <li>{props.skills[2]}</li>
+            <li>{props.skills[0].skill.name}</li>
+            {/* <li>{props.skills[1].skill.name}</li>
+            <li>{props.skills[2].skill.name}</li> */}
       </ul>
       <ul>
-            <li>{props.skills[3]}</li>
-            <li>{props.skills[4]}</li>
-            <li>{props.skills[5]}</li>
       </ul>
       <ul>
-            <li>{props.skills[6]}</li>
-            <li>{props.skills[7]}</li>
-            <li>{props.skills[8]}</li>
+            
       </ul>
     </div>
   );

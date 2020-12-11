@@ -14,7 +14,7 @@ function Card (props: CardProps) {
     <div className="card">
       <PhotoAndInfo fullName={props.profile.fullName} tenure={props.profile.tenure} seniority={props.profile.seniority}/>
       <Skills skills={props.profile.skills} />
-      <Projects projects={props.profile.projects}/>
+      <Projects projects={props.profile.historicalProjects}/>
     </div>
   );
 }

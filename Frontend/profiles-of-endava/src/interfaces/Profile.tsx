@@ -1,4 +1,5 @@
 import { Project } from "./Project";
+import { SkillLevel } from "./SkillLevel";
 
 export interface Profile{
     id:number,
@@ -6,6 +7,6 @@ export interface Profile{
     bornDate:string,
     tenure:number,
     seniority:string,
-    skills:string[],
-    projects:Project[]
+    skills:SkillLevel[],
+    historicalProjects:Project[]
 }
