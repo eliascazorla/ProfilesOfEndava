@@ -9,8 +9,12 @@ function ViewProfiles () {
 
     const [profiles, setProfiles] = useState([]);
 
+    const getService = (): ProfileService => {
+        return new ProfileService();
+    }
+
     useEffect(() => {
-        const profileService: ProfileService = new ProfileService();
+        const profileService = getService();
         profileService.get().then(response => {
             setProfiles(response);
         });
