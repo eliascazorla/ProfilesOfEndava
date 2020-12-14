@@ -1,15 +1,16 @@
 import * as React from 'react';
 import "../HeaderComponent/Header.scss"
 
-interface HeaderProps {
-    fullName?:string
-}
 
-function Header (props: HeaderProps) {
+function Header () {
   return (
     <div className="header">
-      <p>ENDAVA</p>
-      <p>{props.fullName}</p>
+      <nav>
+        <img src="logo.JPG" alt="logo"></img>
+        <p>ENDAVA</p>
+        <p>MARIA RODRIGUEZ</p>
+        <img src="logout.JPG" alt="logout"/>
+      </nav>
     </div>
   );
 }

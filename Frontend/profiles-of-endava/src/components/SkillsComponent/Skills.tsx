@@ -11,14 +11,7 @@ function Skills (props: SkillsProps) {
     <div className="skills">
       <h3>Skills</h3>
       <ul>
-            <li>{props.skills[0].skill.name}</li>
-            {/* <li>{props.skills[1].skill.name}</li>
-            <li>{props.skills[2].skill.name}</li> */}
-      </ul>
-      <ul>
-      </ul>
-      <ul>
-            
+        {props.skills.map(skill => <li>{skill.skill.name}{skill.level}</li>)}
       </ul>
     </div>
   );

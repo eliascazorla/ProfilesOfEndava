@@ -13,4 +13,15 @@ $color-white:#FFF;
     height: 45px;
     background-color: $color-dark-grey;
     color: $color-white;
-  }
+    nav{
+        width: 76vw;
+        height: 100%;
+        margin: auto auto;
+        img, p{
+            display: inline;
+        }
+        p:nth-child(3){
+            margin-left: 900px;
+        } 
+    }
+}
