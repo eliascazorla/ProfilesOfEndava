@@ -11,7 +11,7 @@ function Skills (props: SkillsProps) {
     <div className="skills">
       <h3>Skills</h3>
       <ul>
-        {props.skills.map(skill => <li>{skill.skill.name}{skill.level}</li>)}
+        {props.skills.map(skill => <li>{skill.skill.name}   {skill.level}</li>)}
       </ul>
     </div>
   );

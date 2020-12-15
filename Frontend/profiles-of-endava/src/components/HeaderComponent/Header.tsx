@@ -6,10 +6,14 @@ function Header () {
   return (
     <div className="header">
       <nav>
-        <img src="logo.JPG" alt="logo"></img>
+        <figure>
+          <img src="logo.JPG" alt="logo"></img>
+        </figure>
         <p>ENDAVA</p>
         <p>MARIA RODRIGUEZ</p>
-        <img src="logout.JPG" alt="logout"/>
+        <figure>
+          <img src="logout.JPG" alt="logout"/>
+        </figure>    
       </nav>
     </div>
   );

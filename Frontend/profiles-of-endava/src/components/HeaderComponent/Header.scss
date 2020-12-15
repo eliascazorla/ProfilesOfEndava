@@ -17,8 +17,23 @@ $color-white:#FFF;
         width: 76vw;
         height: 100%;
         margin: auto auto;
-        img, p{
-            display: inline;
+        figure, p{
+            float: left;
+        }
+        figure{
+            height: 100%;
+            img{
+                margin-top: 5px;
+            }
+        }
+        figure:nth-child(4){
+            img{
+                margin-top: 8px;
+                margin-left: 3px;
+            }
+        }
+        p{
+            margin-top: 10px;
         }
         p:nth-child(3){
             margin-left: 900px;
