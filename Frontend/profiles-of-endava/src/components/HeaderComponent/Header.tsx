@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { isArrayBindingPattern } from 'typescript';
 import "../HeaderComponent/Header.scss"
 
 
@@ -13,7 +14,7 @@ function Header () {
         <p>MARIA RODRIGUEZ</p>
         <figure>
           <img src="logout.JPG" alt="logout"/>
-        </figure>    
+        </figure> 
       </nav>
     </div>
   );
