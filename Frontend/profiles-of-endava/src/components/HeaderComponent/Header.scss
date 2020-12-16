@@ -14,6 +14,7 @@ $color-white:#FFF;
     background-color: $color-dark-grey;
     color: $color-white;
     nav{
+        position: relative;
         width: 76vw;
         height: 100%;
         margin: auto auto;
@@ -27,6 +28,8 @@ $color-white:#FFF;
             }
         }
         figure:nth-child(4){
+            position: absolute;
+            right: 0;
             img{
                 margin-top: 8px;
                 margin-left: 3px;
@@ -36,7 +39,8 @@ $color-white:#FFF;
             margin-top: 10px;
         }
         p:nth-child(3){
-            margin-left: 900px;
+            position: absolute;
+            right: 28px;
         } 
     }
 }
