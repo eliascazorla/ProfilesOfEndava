@@ -1,6 +1,7 @@
 import * as React from 'react';
 import "../SearchBoxComponent/SearchBox.scss"
 import {useState} from "react"
+import SearchIcon from "@material-ui/icons/Search"
 
 interface SearchBoxProps{
   profilesByName?:any;
@@ -20,7 +21,8 @@ function SearchBox (props: SearchBoxProps) {
 
   return (
     <div className="searchBox">
-        <input type="text" placeholder="Search Profile" onKeyPress={e=> handleKeyPress(e)}/>
+        <SearchIcon id="searchIcon"/>
+        <input id="textField" onKeyPress={handleKeyPress} placeholder="Search Profile"/>
     </div>
   );
 }
