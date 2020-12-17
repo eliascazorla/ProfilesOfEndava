@@ -18,14 +18,13 @@ function ViewProfiles () {
     const profilesByName = (name:string) => {
         service.getByName(name).then(response => {
             setProfiles(response);
-            console.log(response);
         });
     }
 
     return (
         <div>
             <SearchBox profilesByName={profilesByName}/>
-            <CardsContainer profiles={profiles}/>
+            {profiles.length>0? <CardsContainer profiles={profiles}/> : <p>No profiles found with the name specified.</p>} 
         </div>
     );
 }

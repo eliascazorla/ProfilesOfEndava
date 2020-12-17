@@ -18,7 +18,7 @@ $color-white:#FFF;
         width: 76vw;
         height: 100%;
         margin: auto auto;
-        figure, p{
+        figure, p, ul li{
             float: left;
         }
         figure{
@@ -27,7 +27,7 @@ $color-white:#FFF;
                 margin-top: 5px;
             }
         }
-        figure:nth-child(4){
+        figure:nth-child(5){
             position: absolute;
             right: 0;
             img{
@@ -38,9 +38,22 @@ $color-white:#FFF;
         p{
             margin-top: 10px;
         }
-        p:nth-child(3){
+        p:nth-child(4){
             position: absolute;
             right: 28px;
         } 
+        ul{
+            position: absolute;
+            right: 175px;
+            list-style: none;
+            margin-top: 10px;
+            li{
+                padding-right: 15px;
+                a{
+                    color:$color-white;
+                    text-decoration:none;
+                }
+            }
+        }
     }
 }
