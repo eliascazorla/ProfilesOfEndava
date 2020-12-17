@@ -12,5 +12,16 @@ export default class ProfileService{
                         throw error;
                     });
     };
+
+    getByName = (name:string) => {
+        return Axios.get("http://localhost:8080/profiles", {
+                params:{
+                    fullName: name
+                }
+        }).then((response) => response.data)
+          .catch((error) => {
+                  throw error;
+          })
+    }
 }
 
