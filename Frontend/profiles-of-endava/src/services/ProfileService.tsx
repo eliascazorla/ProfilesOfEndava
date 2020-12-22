@@ -16,7 +16,7 @@ export default class ProfileService{
     getByName = (name:string) => {
         return Axios.get("http://localhost:8080/profiles", {
                 params:{
-                    fullName: name
+                    name: name
                 }
         }).then((response) => response.data)
           .catch((error) => {
