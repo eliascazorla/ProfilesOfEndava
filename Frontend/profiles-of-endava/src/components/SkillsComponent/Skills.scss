@@ -1,0 +1,29 @@
+$color-blue:#08619D;
+$color-dark-grey:#666;
+
+.skills{
+    grid-row:2/3;
+    grid-column:1/4;
+    h3{
+        border-bottom: 1px solid $color-blue;
+      }
+    ul{
+      width: 100%;
+      list-style-type: none;
+      margin-top: 10px;
+      padding: 0 55px 0 0;
+      font-size:14px;
+      display: grid;
+      grid-template: repeat(3, 1fr)/ repeat(3, 1fr);
+      grid-auto-flow: column;
+      li{
+        padding: 5px 0;
+        font-size:1em;
+        display: block;
+      }
+      li:nth-child(4), li:nth-child(5), li:nth-child(6){
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+      }
+    }
+  }

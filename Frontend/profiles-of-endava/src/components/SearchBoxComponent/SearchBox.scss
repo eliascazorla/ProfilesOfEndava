@@ -1,0 +1,28 @@
+$color-dark-grey:#666;
+$color-white:#FFF;
+
+.searchBox{
+    width: 76vw;
+    margin: 1em auto;
+    height: 40px;
+    background-color: $color-white;
+    border: 1px solid $color-dark-grey;
+    #searchIcon{
+        margin-top: 7px;
+        color: $color-dark-grey;
+        float: left;
+        width: 3%;
+    }
+    input{
+        border: none;
+        width: 97%;
+        height: 100%;
+        float: left;
+    }
+    input:focus{
+        outline: 0;
+    }
+    input::placeholder{
+        font-size: 1.15em;
+    }
+}
