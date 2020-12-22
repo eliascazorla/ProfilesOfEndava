@@ -3,12 +3,16 @@ import { Dialog, DialogTitle, DialogContent, DialogActions, Button} from "@mater
 import CloseSharpIcon from '@material-ui/icons/CloseSharp';
 import ArrowDropDown from "@material-ui/icons/ArrowDropDown"
 import { Link } from "react-router-dom"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import ProfileService from '../../services/ProfileService';
 import  "../CreateProfilePage/CreateProfile.scss"
+import SkillService from '../../services/SkillService';
 
 function CreateProfile () {
   const profileService = new ProfileService();
+  const skillService = new SkillService();
+
+  const [availableSkills, setAvailableSkills] = useState<any[]>([]);
 
   const [profile, setProfile] = useState({
                                           fullName:"",
@@ -60,9 +64,17 @@ function CreateProfile () {
   const seniorities: string[] = ["SR. CONSULTANT", "CONSULTANT", "SR. ENGINEER", "ENGINEER", "SR. TECHNICIAN", "TECHNICIAN",
                                  "JR. TECHNICIAN", "INTERN"];
 
+  const openAndInjectSkills = () => {
+    setOpen(true);
+    skillService.get().then(response =>{
+      setAvailableSkills(response);
+    })
+  }
+
+
   return (
     <div>
-      <Link to="#" onClick={handleToggle}>Create Profile</Link>
+      <Link to="#" onClick={openAndInjectSkills}>Create Profile</Link>
 
       <Dialog open={open} onClose={handleToggle} aria-labelledby="form-dialog-title" id="dialog">
         <section id="title_Container">
@@ -102,10 +114,10 @@ function CreateProfile () {
             <ul>
               {skills.map((skillAdded:any) => <li>{skillAdded.skill.name}</li>)}
             </ul>
-            <input placeholder="ADD SKILL NAME" 
-                    type="text" 
-                    value={skill.name} 
-                    onChange={(e) => {setSkill({ ...skill, name: e.target.value})}}/>
+            <select value={skill.name} onChange={(e) => {setSkill({ ...skill, name: e.target.value})}}>
+              <option value="-1">Select skills</option>
+              {availableSkills.map(skill => <option value={skill.name}>{skill.name}</option>)}
+            </select>
             <input  id="level_Input"
                     placeholder="ADD SKILL LEVEL" 
                     type="text" 
