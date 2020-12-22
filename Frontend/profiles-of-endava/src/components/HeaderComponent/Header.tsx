@@ -2,6 +2,7 @@ import * as React from 'react';
 import {
   Link
 } from "react-router-dom";
+import CreateProfile from '../../pages/CreateProfile';
 import "../HeaderComponent/Header.scss"
 
 
@@ -15,10 +16,10 @@ function Header () {
             <p>ENDAVA</p>
             <ul>
               <li>
-                <Link to="/profiles" className="active" onClick={e => e}>View Profiles</Link>
+                <Link to="/profiles">View Profiles</Link>
               </li>
               <li>
-                <Link to="/createProfile">Create Profile</Link>
+                <CreateProfile/>
               </li>
             </ul>
             <p>MARIA RODRIGUEZ</p>
