@@ -13,8 +13,8 @@ public class ProfilesService implements IProfilesService{
     private ProfilesRepository profilesRepository;
 
     @Override
-    public List<Profile> getByFullName(String fullName) {
-        return profilesRepository.getByFullName(fullName);
+    public List<Profile> getByName(String name) {
+        return profilesRepository.findByFullNameIgnoreCaseContaining(name);
     }
 
     @Override
