@@ -5,9 +5,7 @@ import SharedLayout from './layouts/SharedLayout';
 import {BrowserRouter as Router,
         Switch,
         Route,
-        Link
       } from "react-router-dom";
-import CreateProfile from './pages/CreateProfile';
 
 function App() {
   return (
@@ -17,11 +15,6 @@ function App() {
           <Route path="/profiles">
             <SharedLayout>
               <ViewProfiles/>
-            </SharedLayout>
-          </Route>
-          <Route path="/createProfile">
-            <SharedLayout>
-              <CreateProfile/>
             </SharedLayout>
           </Route>
         </Switch>

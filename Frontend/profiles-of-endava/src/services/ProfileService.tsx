@@ -23,5 +23,14 @@ export default class ProfileService{
                   throw error;
           })
     }
+
+    createProfile = (data:any) => {
+        const config = {headers: {'Content-Type': 'application/json'}}
+        return Axios.post("http://localhost:8080/profiles", data, config)
+                        .then((response) => response.data)
+                        .catch((error) => {
+                            throw error;
+                        }) 
+    }
 }
 
