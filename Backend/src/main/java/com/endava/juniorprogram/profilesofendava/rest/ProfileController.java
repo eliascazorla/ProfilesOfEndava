@@ -14,12 +14,12 @@ public class ProfileController {
     private IProfilesService profilesService;
 
     @GetMapping
-    public List<Profile> getProfiles(@RequestParam(required = false) String fullName,
+    public List<Profile> getProfiles(@RequestParam(required = false) String name,
                                      @RequestParam(required = false)Long tenure,
                                      @RequestParam(required = false)String seniority,
                                      @RequestParam(required = false)String skill){
-        if(fullName!=null){
-            return profilesService.getByFullName(fullName);
+        if(name!=null){
+            return profilesService.getByName(name);
         }
         if(tenure!=null){
             return profilesService.getByTenure((long) tenure);
