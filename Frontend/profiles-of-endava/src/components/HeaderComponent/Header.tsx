@@ -2,7 +2,7 @@ import * as React from 'react';
 import {
   Link
 } from "react-router-dom";
-import CreateProfile from '../../pages/CreateProfile';
+import CreateProfile from '../../pages/CreateProfilePage/CreateProfile';
 import "../HeaderComponent/Header.scss"
 
 
