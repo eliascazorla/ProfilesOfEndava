@@ -4,18 +4,19 @@ import {useState} from "react"
 import SearchIcon from "@material-ui/icons/Search"
 
 interface SearchBoxProps{
-  profilesByName?:any;
+  profilesByFilter?:any;
 }
 
 function SearchBox (props: SearchBoxProps) {
 
-  const [name, setName] = useState("");
+  const [filter, setFilter] = useState("");
 
   const handleKeyPress = (e:any):void =>{
-    if(e.key != "Enter"){
-      setName(name + e.key);
+    if(e.key !== "Enter"){
+      setFilter(filter + e.key);
+      console.log(filter);
     }else{
-      props.profilesByName(e.target.value);
+      props.profilesByFilter(e.target.value);
     }
   }
 

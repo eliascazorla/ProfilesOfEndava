@@ -15,15 +15,16 @@ function ViewProfiles () {
         });
     }, []);
     
-    const profilesByName = (name:string) => {
-        service.getByName(name).then(response => {
+    const profilesByFilter = (filter:string) => {
+        console.log(filter);
+        service.get(filter).then(response => {
             setProfiles(response);
         });
     }
 
     return (
         <div>
-            <SearchBox profilesByName={profilesByName}/>
+            <SearchBox profilesByFilter={profilesByFilter}/>
             <CardsContainer profiles={profiles}/>
         </div>
     );
