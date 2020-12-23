@@ -10,7 +10,7 @@ import java.util.List;
 public interface ProfilesRepository extends CrudRepository<Profile, Long> {
     List<Profile> findByFullNameIgnoreCaseContaining(String name);
     List<Profile> getByTenure(long tenure);
-    List<Profile> getBySeniority(String seniority);
-    List<Profile> findBySkills_Skill_Name(String name);
+    List<Profile> findBySeniorityIgnoreCaseContaining(String seniority);
+    List<Profile> findBySkills_Skill_NameIgnoreCaseContaining(String name);
     Profile getByDevId(long id);
 }
