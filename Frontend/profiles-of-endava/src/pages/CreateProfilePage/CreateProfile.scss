@@ -1,5 +1,5 @@
 $color-light-grey:rgb(120,120,120);
-$color-blue:rgb(126,190,233);
+$color-sky-blue:rgb(126,190,233);
 
 
 #title_Container{
@@ -27,10 +27,9 @@ $color-blue:rgb(126,190,233);
 }
 
 
-
 form{
     width: 95%;
-    margin: 5px auto 5em auto;
+    margin: 5px auto 4em auto;
     section:nth-child(1){
         display: grid;
         grid-template: repeat(4, 1fr)/ repeat(4,1fr);
@@ -38,27 +37,73 @@ form{
         column-gap: 1em;
         input{
             width: 272px;
-            height: 25px;
+            height: 35px;
             margin-bottom: 5px;
+            padding: 0;
+        }
+        #input_Date{
+            margin-bottom: 0;
+        }
+        select{
+            height: 39px;
         }
     }
     section:nth-child(2){
         margin: 1em 0;  
         h3{
-            border-bottom: 2px solid $color-blue;
+            border-bottom: 2px solid $color-sky-blue;
+        }
+        ul{
+            list-style-type: none;
+            li{
+                display: inline-block;
+                background-color: $color-sky-blue;
+                border: 1px solid blue;
+                padding: 3px;
+                margin: 0 5px 3px 0;
+                font-size: 12px;
+            }
+        }
+        select{
+            width: 165px;
+            height: 25px;
+            margin-right: 7px;
         }
     }
     section:nth-child(3){
+        #projectAdded{
+            color:green;
+            font-weight: 500;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
         textarea{
             resize: none;
             height: 50px;
+            width: 170px;
+            padding: 4px;
+            margin-top: 1em;
+            border-radius: 3px;
         }
-
+        #style1_button2{
+            top: 8em;
+        }
+        input{
+            width: 168px;
+        }
+        input:nth-child(3){
+            margin: 0;
+        }
+        input:nth-child(4), input:nth-child(5){
+            margin: 0 0 0 15px
+        }
     }
 
     section:nth-child(3), section:nth-child(4){ 
         h3{
-            border-bottom: 1px solid $color-blue;
+            font-weight: 500;
+            border-bottom: 1px solid $color-sky-blue;
         }
     }
     section:nth-child(2), section:nth-child(3), section:nth-child(4){
@@ -71,7 +116,7 @@ form{
             padding: 5px;
         }
         h3{
-            color: $color-blue;
+            color: $color-sky-blue;
             padding-bottom: 3px;
             margin-bottom: 7px;
             font-size: 0.9em;
@@ -88,11 +133,20 @@ form{
 
 #style1_button1, #style1_button2, #style1_button3{
     border: 1px solid black;
+    background-color: $color-sky-blue;
     padding: 2px 0;
     width: 65px;
     font-size: 12px;
 } 
 
+#style2_button1, #style1_button3{
+    text-transform: capitalize;
+}
+
 #level_Input{
     width: 5em;
+}
+
+.error{
+    color: red;
 }

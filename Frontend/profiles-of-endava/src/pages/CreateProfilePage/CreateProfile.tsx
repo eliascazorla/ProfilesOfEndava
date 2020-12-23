@@ -36,29 +36,74 @@ function CreateProfile () {
     setOpen(!open);
   }
 
+
+  const [skillError, setSkillError] = useState("");
   const addSkill = () => {
-    const skillToAdd = {level: skillLevel.level, skill:{name:skill.name}};
-    setSkills([...skills, skillToAdd]);
-    setSkill({name:""});
-    setSkillLevel({level:0, skill: {name:""}});
+    if(skill.name !== ""){
+        if(skillLevel.level >=1 && skillLevel.level <=5){
+          setSkillError("");
+          const skillToAdd = {level: skillLevel.level, skill:{name:skill.name}};
+          let i: number = 0;
+          let found: boolean = false;
+          while(i<skills.length && !found){
+            if(skills[i].skill.name === skillToAdd.skill.name){
+              found = true;
+            }
+            i++
+          }
+          if(found){
+            setSkillError("You have already entered the skill!");
+          }else{
+            setSkillError("");
+            setSkills([...skills, skillToAdd]);
+            setSkill({name:""});
+            setSkillLevel({level:0, skill: {name:""}});
+          }
+        }else{
+          setSkillError("Please enter a level between 1 and 5.")
+        }
+    }else{
+      setSkillError("Please enter a valid skill.");
+    }
   }
 
+  const [historicalProjectAdded, setHistoricalProjectAdded] = useState("");
+  const [projectError, setProjectError] = useState("");
   const addProject = () => {
-    setHistoricalProjects([...historicalProjects, historicalProject]);
-    setHistoricalProject({startDate:"", endDate: "", company: "", description: ""});
+    if(historicalProject.company !== ""){
+      if(historicalProject.startDate !== "" && historicalProject.endDate !== ""){
+        if(historicalProject.description !== ""){
+          setProjectError("");
+          setHistoricalProjects([...historicalProjects, historicalProject]);
+          setHistoricalProjectAdded(historicalProject.description);
+          setHistoricalProject({startDate:"", endDate: "", company: "", description: ""});
+        }else{
+          setProjectError("Enter a project description!");
+        }
+      }else{
+        setProjectError("You have to enter a start Date and an end Date!");
+      }
+    }else{
+      setProjectError("Enter a company for the project!");
+    }
   }
 
   const handleSubmit = (e:any) =>{
-    const profileToAdd = {fullName: profile.fullName, 
-                          bornDate: profile.bornDate, 
-                          tenure: profile.tenure, 
-                          seniority: profile.seniority, 
-                          skills: skills, 
-                          historicalProjects: historicalProjects, 
-                          dev: dev};
-    profileService.createProfile(profileToAdd).then(response => {
-      setProfile(response);
-    });
+    if(profile.fullName.length >0  && profile.bornDate.length >0 && profile.tenure >0  && profile.seniority.length >0 
+      && skills.length >0 && historicalProjects.length >0 && dev.mail.length >0 && dev.password.length >0){
+        const profileToAdd = {fullName: profile.fullName, 
+          bornDate: profile.bornDate, 
+          tenure: profile.tenure, 
+          seniority: profile.seniority, 
+          skills: skills, 
+          historicalProjects: historicalProjects, 
+          dev: dev};
+          profileService.createProfile(profileToAdd).then(response => {
+          setProfile(response);
+          });
+          window.location.href = "/profiles";
+          setOpen(false);
+      }
   }
 
   const seniorities: string[] = ["SR. CONSULTANT", "CONSULTANT", "SR. ENGINEER", "ENGINEER", "SR. TECHNICIAN", "TECHNICIAN",
@@ -89,11 +134,11 @@ function CreateProfile () {
             <input type="text" 
                     value={profile.fullName} 
                     onChange={(e) => {setProfile({ ...profile, fullName:e.target.value})}}/>
-            
             <label>
               BORN DATE
             </label>
-            <input type="text" 
+            <input  id="input_Date"
+                    type="date" 
                     value={profile.bornDate} 
                     onChange={(e) => {setProfile({ ...profile, bornDate: e.target.value})}}/>
             <label>
@@ -106,6 +151,7 @@ function CreateProfile () {
               SENIORITY
             </label>
             <select value={profile.seniority} onChange={(e) => {setProfile({ ...profile, seniority: e.target.value})}}>
+              <option value="">SELECT SENIORITY</option>
               {seniorities.map(seniority => <option value={seniority}>{seniority}</option>)}
             </select>
           </section>
@@ -115,7 +161,7 @@ function CreateProfile () {
               {skills.map((skillAdded:any) => <li>{skillAdded.skill.name}</li>)}
             </ul>
             <select value={skill.name} onChange={(e) => {setSkill({ ...skill, name: e.target.value})}}>
-              <option value="-1">Select skills</option>
+              <option value="">SELECT SKILL</option>
               {availableSkills.map(skill => <option value={skill.name}>{skill.name}</option>)}
             </select>
             <input  id="level_Input"
@@ -126,18 +172,22 @@ function CreateProfile () {
             <Button id="style1_button1" onClick={addSkill}>
                 ADD
             </Button>
+            {skillError!==""?<div className="error">{skillError}</div>:false}
           </section> 
           <section>
             <h3>PROJECTS</h3>
+            {historicalProjectAdded !== ""? <p id="projectAdded">{historicalProjectAdded} added</p>:false}
             <input placeholder="ADD COMPANY" type="text" 
                     value={historicalProject.company} 
                     onChange={(e) => {setHistoricalProject({ ...historicalProject, company: e.target.value})}}/>
             <input placeholder="START DATE" 
                     type="text" 
+                    onFocus={(e) => {e.target.type='date'}}
                     value={historicalProject.startDate} 
                     onChange={(e) => {setHistoricalProject({ ...historicalProject, startDate: e.target.value})}}/>
             <input placeholder="END DATE" 
                     type="text" 
+                    onFocus={(e) => {e.target.type='date'}}
                     value={historicalProject.endDate} 
                     onChange={(e) => {setHistoricalProject({ ...historicalProject, endDate: e.target.value})}}/>
             <textarea placeholder="ADD PROJECT DESCRIPTION" 
@@ -146,6 +196,7 @@ function CreateProfile () {
             <Button id="style1_button2" onClick={addProject}>
                 ADD
             </Button>
+            {projectError !== ""?<div className="error">{projectError}</div>:false}
           </section>
           <section>
             <h3>USER INFO</h3>

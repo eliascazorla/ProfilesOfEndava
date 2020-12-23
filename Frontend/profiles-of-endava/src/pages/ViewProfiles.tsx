@@ -24,7 +24,7 @@ function ViewProfiles () {
     return (
         <div>
             <SearchBox profilesByName={profilesByName}/>
-            {profiles.length>0? <CardsContainer profiles={profiles}/> : <p>No profiles found with the name specified.</p>} 
+            <CardsContainer profiles={profiles}/>
         </div>
     );
 }
