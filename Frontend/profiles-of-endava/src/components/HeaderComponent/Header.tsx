@@ -1,7 +1,4 @@
 import * as React from 'react';
-import {
-  Link
-} from "react-router-dom";
 import CreateProfile from '../../pages/CreateProfilePage/CreateProfile';
 import "../HeaderComponent/Header.scss"
 
@@ -15,9 +12,6 @@ function Header () {
             </figure>
             <p>ENDAVA</p>
             <ul>
-              <li>
-                <Link to="/profiles">View Profiles</Link>
-              </li>
               <li>
                 <CreateProfile/>
               </li>

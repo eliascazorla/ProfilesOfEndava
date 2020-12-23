@@ -11,7 +11,7 @@ interface CardsContainerProps {
 function CardsContainer (props: CardsContainerProps) {
   return (
     <div className="cards_container">
-        {props.profiles.map(profile => <Card profile={profile}/>)}
+        {props.profiles.length > 0? props.profiles.map(profile => <Card profile={profile}/>):<p>No profiles found.</p>}
     </div>
   );
 }
