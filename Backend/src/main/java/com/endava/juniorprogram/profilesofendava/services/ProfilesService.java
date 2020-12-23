@@ -5,6 +5,7 @@ import com.endava.juniorprogram.profilesofendava.repositories.ProfilesRepository
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -12,24 +13,22 @@ public class ProfilesService implements IProfilesService{
     @Autowired
     private ProfilesRepository profilesRepository;
 
-    @Override
-    public List<Profile> getByName(String name) {
-        return profilesRepository.findByFullNameIgnoreCaseContaining(name);
-    }
 
     @Override
-    public List<Profile> getByTenure(long tenure) {
-        return profilesRepository.getByTenure(tenure);
-    }
-
-    @Override
-    public List<Profile> getBySeniority(String seniority) {
-        return profilesRepository.getBySeniority(seniority);
-    }
-
-    @Override
-    public List<Profile> getBySkill(String skill) {
-        return profilesRepository.findBySkills_Skill_Name(skill);
+    public List<Profile> getByFilter(String filter) {
+        List<Profile> profilesByName = profilesRepository.findByFullNameIgnoreCaseContaining(filter);
+        List<Profile> profilesBySeniority = profilesRepository.findBySeniorityIgnoreCaseContaining(filter);
+        List<Profile> profilesBySkill = profilesRepository.findBySkills_Skill_NameIgnoreCaseContaining(filter);
+        if(profilesByName.stream().count() > 0){
+            return profilesByName;
+        }
+        if(profilesBySeniority.stream().count() > 0){
+            return profilesBySeniority;
+        }
+        if(profilesBySkill.stream().count() > 0){
+            return profilesBySkill;
+        }
+        return new ArrayList<Profile>();
     }
 
     @Override
