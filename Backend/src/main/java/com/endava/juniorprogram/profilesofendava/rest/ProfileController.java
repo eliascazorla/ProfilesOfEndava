@@ -15,21 +15,9 @@ public class ProfileController {
     private IProfilesService profilesService;
 
     @GetMapping
-    public List<Profile> getProfiles(@RequestParam(required = false) String name,
-                                     @RequestParam(required = false)Long tenure,
-                                     @RequestParam(required = false)String seniority,
-                                     @RequestParam(required = false)String skill){
-        if(name!=null){
-            return profilesService.getByName(name);
-        }
-        if(tenure!=null){
-            return profilesService.getByTenure((long) tenure);
-        }
-        if(seniority!=null) {
-            return profilesService.getBySeniority(seniority);
-        }
-        if(skill!=null){
-            return profilesService.getBySkill(skill);
+    public List<Profile> getProfiles(@RequestParam(required = false) String filter){
+        if(filter!=null){
+            return profilesService.getByFilter(filter);
         }
         return profilesService.getAll();
     }
