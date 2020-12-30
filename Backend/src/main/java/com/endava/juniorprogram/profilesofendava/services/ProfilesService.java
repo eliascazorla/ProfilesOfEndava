@@ -18,7 +18,7 @@ public class ProfilesService implements IProfilesService{
     public List<Profile> getByFilter(String filter) {
         List<Profile> profilesByName = profilesRepository.findByFullNameIgnoreCaseContaining(filter);
         List<Profile> profilesBySeniority = profilesRepository.findBySeniorityIgnoreCaseContaining(filter);
-        List<Profile> profilesBySkill = profilesRepository.findBySkills_Skill_NameIgnoreCaseContaining(filter);
+        List<Profile> profilesBySkill = profilesRepository.findDistinctBySkills_Skill_NameIgnoreCaseContaining(filter);
         if(profilesByName.stream().count() > 0){
             return profilesByName;
         }
